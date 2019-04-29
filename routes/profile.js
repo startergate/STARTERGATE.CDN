@@ -4,19 +4,16 @@ const express = require('express');
 const fs = require('fs');
 var router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
-});
-
-router.get('/profile/img/:id', (req, res, next) => {
-  fs.readFile('../public/images/profile/' + req.params.id + '.png', 'utf-8', (err, data) => {
+router.get('/img/:id', (req, res, next) => {
+  fs.readFile('public/images/sid/profile/' + req.params.id + '.png', (err, data) => {
     if (err) {
+      console.log(err);
       res.sendStatus(404);
       return;
     }
 
-    res.set('Content-Type', 'image/' + something);
-    res.send(data);
+    res.set('Content-Type', 'image/png');
+    res.end(data, 'binary');
   });
 });
 
