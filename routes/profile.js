@@ -7,11 +7,16 @@ var router = express.Router();
 router.get('/img/:id', (req, res, next) => {
   fs.readFile('public/images/sid/profile/' + req.params.id + '.png', (err, data) => {
     if (err) {
-      console.log(err);
-      res.sendStatus(404);
+      fs.readFile('public/images/sid/profile/default.png', (err, data) => {
+        if (err) {
+          res.sendStatus(500);
+          return;
+        }
+        res.set('Content-Type', 'image/png');
+        res.end(data, 'binary');
+      });
       return;
     }
-
     res.set('Content-Type', 'image/png');
     res.end(data, 'binary');
   });
