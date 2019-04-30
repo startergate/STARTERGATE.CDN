@@ -39,6 +39,9 @@ router.post('/img/:id/upload', (req, res, next) => {
     if (err) {
       return res.sendStatus(500);
     }
+    if (req.body.redirectTo) {
+      res.redirect(req.body.redirectTo);
+    }
     return res.sendStatus(201);
   });
 });
