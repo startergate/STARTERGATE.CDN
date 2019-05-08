@@ -31,4 +31,4 @@ private/images/sid/profile/**
 !private/images/sid/profile/.default
 !private/images/sid/profile/default.png
 
-!private/data/discord/bot.json
+private/data/discord/bot.json
