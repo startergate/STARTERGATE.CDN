@@ -6,7 +6,7 @@ const multer = require('multer');
 var router = express.Router();
 var storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, "public/images/sid/profile/");
+    callback(null, "private/images/sid/profile/");
   },
   filename: function(req, file, cb) {
     cb(null, req.params.id + '.' + file.mimetype.split('/')[1]);

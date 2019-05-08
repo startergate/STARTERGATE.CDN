@@ -27,6 +27,6 @@ coverage
 # Benchmarking
 benchmarks/graphs
 
-public/images/sid/profile/**
-!public/images/sid/profile/.default
-!public/images/sid/profile/default.png
+private/images/sid/profile/**
+!private/images/sid/profile/.default
+!private/images/sid/profile/default.png
