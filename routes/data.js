@@ -18,4 +18,15 @@ router.get('/discord/token/:id', (req, res, next) => {
   res.sendStatus(404);
 });
 
+router.get('/db/mysql/:id', (req, res, next) => {
+  if (db_password.data[req.params.id]) {
+    if (req.ip in db_password.data[req.params.id].allowed_ip || req.ip === '::1') {
+      res.set('Content-Type', 'text/plain');
+      res.send(db_password.data[req.params.id].db_password);
+      return;
+    }
+  }
+  res.sendStatus(404);
+});
+
 module.exports = router;
