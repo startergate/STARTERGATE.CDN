@@ -5,9 +5,9 @@ const fs = require('fs');
 const router = express.Router();
 
 const ds_token = JSON.parse(fs.readFileSync('private/data/discord/bot.json'));
+const db_password = JSON.parse(fs.readFileSync('private/data/discord/bot.json'));
 
-/* GET home page. */
-router.get('/token/:id', (req, res, next) => {
+router.get('/discord/token/:id', (req, res, next) => {
   if (ds_token.data[req.params.id]) {
     if (req.ip in ds_token.data[req.params.id].allowed_ip || req.ip === '::1') {
       res.set('Content-Type', 'text/plain');
