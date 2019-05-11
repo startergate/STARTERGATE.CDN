@@ -1,0 +1,8 @@
+{
+  "data": {
+    "0": {
+      "allowed_ip": ["210.218.33.68"],
+      "discord_token": "password"
+    }
+  }
+}

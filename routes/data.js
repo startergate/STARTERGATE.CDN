@@ -5,7 +5,7 @@ const fs = require('fs');
 const router = express.Router();
 
 const ds_token = JSON.parse(fs.readFileSync('private/data/discord/bot.json'));
-const db_password = JSON.parse(fs.readFileSync('private/data/discord/bot.json'));
+const db_password = JSON.parse(fs.readFileSync('private/data/db/access.json'));
 
 router.get('/discord/token/:id', (req, res, next) => {
   if (ds_token.data[req.params.id]) {
