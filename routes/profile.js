@@ -21,6 +21,7 @@ router.get('/img/:id', (req, res, next) => {
     if (err) {
       fs.readFile('public/images/sid/profile/default.png', (err, data) => {
         if (err) {
+          console.log(err);
           res.sendStatus(500);
           return;
         }
